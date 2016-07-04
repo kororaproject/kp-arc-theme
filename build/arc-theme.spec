@@ -3,7 +3,7 @@
 Name:		arc-theme
 # Version from $(date +%s)
 Version:	20160605
-Release:	1.git%{git}%{?dist}
+Release:	1.git%{git}%{?dist}.1
 Summary:	Arc is a theme for GTK 3, GTK 2 and GNOMEShell
 Group:		User Interface/Desktops
 Epoch:		1
@@ -26,7 +26,15 @@ Requires:	gnome-themes-standard
 BuildArch:	noarch
 
 %description
-Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. It supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, etc.
+Arc is a flat theme with transparent elements for GTK 3,
+GTK 2 and Gnome-Shell. It supports GTK 3 and GTK 2 based
+desktop environments like GNOME, Cinnamon, MATE and Xfce.
+
+%package plank
+Summary:	Arc theme for Plank
+
+%description plank
+Arc theme for Plank
 
 %prep
 %setup -q
@@ -36,6 +44,8 @@ Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. 
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
+mkdir -p %{buildroot}%{_datadir}/plank/themes
+cp -r extra/Arc-Plank %{buildroot}%{_datadir}/plank/themes/
 
 %files
 %defattr(-,root,root)
@@ -43,6 +53,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/themes/Arc
 %{_datadir}/themes/Arc-Darker
 %{_datadir}/themes/Arc-Dark
+
+%files plank
+%{_datadir}/plank/themes/Arc-Plank/*
 
 %changelog
 * Sun Jun 26 2016 Chris Smart <csmart@kororaproject.org> 20160605-1.git3095952c1eb6
