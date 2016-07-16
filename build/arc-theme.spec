@@ -3,7 +3,7 @@
 Name:		arc-theme
 # Version from $(date +%s)
 Version:	20160605
-Release:	2%{?dist}.1
+Release:	2%{?dist}.2
 Summary:	Arc is a theme for GTK 3, GTK 2 and GNOMEShell
 Group:		User Interface/Desktops
 Epoch:		1
