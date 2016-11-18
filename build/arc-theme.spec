@@ -2,8 +2,8 @@
 
 Name:		arc-theme
 # Version from $(date +%s)
-Version:	20160605
-Release:	2%{?dist}.2
+Version:	20161005
+Release:	1%{?dist}
 Summary:	Arc is a theme for GTK 3, GTK 2 and GNOMEShell
 Group:		User Interface/Desktops
 Epoch:		1
@@ -57,6 +57,9 @@ cp -r extra/Arc-Plank %{buildroot}%{_datadir}/plank/themes/
 %{_datadir}/plank/themes/Arc-Plank/*
 
 %changelog
+* Fri Nov 18 2016 Chris Smart <csmart@kororaproject.org> 20161005-1
+- Build latest version from tag.
+
 * Mon Jul 04 2016 Leigh Scott <leigh123linux@googlemail.com> 20160605-2
 - spec file clean up
 - fix release tag, 20160605 is a release (not git)
